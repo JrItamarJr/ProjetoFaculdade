@@ -27,7 +27,7 @@ public class FormLogin extends javax.swing.JFrame {
         jPasswordPass.requestFocus(); // Deixa o "jPasswordField" em foco //
     }
 
-
+   /teste/
     private void exibirErro(javax.swing.JLabel label, String mensagem) {
         label.setVisible(true);
         label.setText(mensagem);
