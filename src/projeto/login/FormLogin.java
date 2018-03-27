@@ -7,11 +7,9 @@ import java.awt.event.KeyListener;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
-import projeto.dao.userd;
 import projeto.tela.FormPrincipal;
 import projeto.txt.salvartxt;
 
