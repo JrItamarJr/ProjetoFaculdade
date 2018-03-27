@@ -25,7 +25,7 @@ public class FormLogin extends javax.swing.JFrame {
         initComponents();
         this.getRootPane().setDefaultButton(jButtonEntrar);
         inicializacao();
-        jPasswordPass.requestFocus(); // Deixa o "jPasswordField" em foco //
+//        jPasswordPass.requestFocus(); // Deixa o "jPasswordField" em foco //
     }
 
     private void exibirErro(javax.swing.JLabel label, String mensagem) {
@@ -44,6 +44,7 @@ public class FormLogin extends javax.swing.JFrame {
         jPasswordPass = new javax.swing.JPasswordField();
         jTextUser = new javax.swing.JTextField();
         jCheckLembrar = new javax.swing.JCheckBox();
+        jPanel1 = new javax.swing.JPanel();
         jLB_Minimizar = new javax.swing.JLabel();
         jLB_Fechar = new javax.swing.JLabel();
         jLB_Background = new javax.swing.JLabel();
@@ -74,12 +75,15 @@ public class FormLogin extends javax.swing.JFrame {
         jTextUser.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextUser.setBorder(null);
         jTextUser.setOpaque(false);
-        getContentPane().add(jTextUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 250, 30));
+        getContentPane().add(jTextUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 148, 250, 30));
 
         jCheckLembrar.setSelected(true);
         jCheckLembrar.setText("Lembrar usuario.");
         jCheckLembrar.setContentAreaFilled(false);
         getContentPane().add(jCheckLembrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, -1, -1));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 100, 150, 40));
 
         jLB_Minimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLB_Minimizar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -164,6 +168,7 @@ public class FormLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLB_Background;
     private javax.swing.JLabel jLB_Fechar;
     private javax.swing.JLabel jLB_Minimizar;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordPass;
     private javax.swing.JTextField jTextUser;
     // End of variables declaration//GEN-END:variables
@@ -173,7 +178,7 @@ public class FormLogin extends javax.swing.JFrame {
 //        fundo(); // Inicia o contrutor da Imagem de fundo
         maiuscula(); // Inia o contrutor que deixa as letras sempres maiuscular no "jTextUser"
 //        getRootPane().setDefaultButton(jButtonEntrar); // Deixa o "jButtonEntrar" em foco
-        jPasswordPass.requestFocus(); // Deixa o "jTextUser" em foco
+//        jPasswordPass.requestFocus(); // Deixa o "jTextUser" em foco
         lerTxt(); // Ler o txt salvo com o Ultimo usuario logado
         setIcon(); // Inicia o Icone do Programa
     }
@@ -285,7 +290,7 @@ public class FormLogin extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Usuario ou senha Incorretos!");
             jPasswordPass.setText("");
-            jTextUser.requestFocus();
+            jPasswordPass.requestFocus();
         }
     }
 
