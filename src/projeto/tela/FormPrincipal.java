@@ -12,6 +12,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import projeto.jdialog.configuser;
@@ -20,7 +21,6 @@ import projeto.telainterna.InternaCadUser;
 import projeto.telainterna.InternaSobreSistema;
 
 public class FormPrincipal extends javax.swing.JFrame {
-
     public FormPrincipal(String usuario) {
         initComponents();
         jLabelLogado.setText(usuario); //  Puxa o usuario Logado  //
@@ -28,7 +28,7 @@ public class FormPrincipal extends javax.swing.JFrame {
 
     }
 
-    private FormPrincipal() {
+    public FormPrincipal() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
@@ -53,6 +53,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         jSeparatorUserFinal = new javax.swing.JSeparator();
         jButtonUser = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
@@ -119,7 +120,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         jDesktopPaneFundoLayout.setVerticalGroup(
             jDesktopPaneFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPaneFundoLayout.createSequentialGroup()
-                .addComponent(jLabelimgFundo, javax.swing.GroupLayout.DEFAULT_SIZE, 589, Short.MAX_VALUE)
+                .addComponent(jLabelimgFundo, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -219,15 +220,23 @@ public class FormPrincipal extends javax.swing.JFrame {
                     .addComponent(jButtonUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
         );
 
+        jButton1.setLabel("");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 44, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5))
         );
 
         jMenuBarFuncoes.setBackground(new java.awt.Color(204, 204, 204));
@@ -470,6 +479,7 @@ public class FormPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+        
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
 
@@ -521,18 +531,7 @@ public class FormPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuEstacionamentoActionPerformed
 
     private void jMenuItemCadColabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadColabActionPerformed
-
-        InternaCadUser internaCadUser = new InternaCadUser();
-        jDesktopPaneFundo.add(internaCadUser);
-        internaCadUser.setLocation(
-                jDesktopPaneFundo.getWidth() / 2 - internaCadUser.getWidth() / 2,
-                jDesktopPaneFundo.getHeight() / 2 - internaCadUser.getHeight() / 2);
-        internaCadUser.setVisible(true);
-
-//        try {
-//              internaCadUser.setMaximum(true);
-//              } catch (PropertyVetoException e) {
-//      }
+        comandoDuplicado(new InternaCadUser());
     }//GEN-LAST:event_jMenuItemCadColabActionPerformed
 
     private void jButtonUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUserActionPerformed
@@ -547,12 +546,7 @@ public class FormPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonUserActionPerformed
 
     private void jMenuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSobreActionPerformed
-        InternaSobreSistema internaSobreSistema = new InternaSobreSistema();
-        jDesktopPaneFundo.add(internaSobreSistema);
-        internaSobreSistema.setLocation(
-                jDesktopPaneFundo.getWidth() / 2 - internaSobreSistema.getWidth() / 2,
-                jDesktopPaneFundo.getHeight() / 2 - internaSobreSistema.getHeight() / 2);
-        internaSobreSistema.setVisible(true);
+        comandoDuplicado(new InternaSobreSistema());
     }//GEN-LAST:event_jMenuItemSobreActionPerformed
 
     public static void main(String args[]) {
@@ -581,6 +575,7 @@ public class FormPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonUser;
     private javax.swing.JDesktopPane jDesktopPaneFundo;
     private javax.swing.JLabel jLabel4;
@@ -677,4 +672,21 @@ public class FormPrincipal extends javax.swing.JFrame {
         //  Caminho até a imagem (OBS: A imagem deve estar no pacote onde o framerecebera o Icone)  //
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/projeto/fundo/if_Company_132680.png")));
     }
+    
+    public void comandoDuplicado(JInternalFrame frame){
+        for(JInternalFrame internal: jDesktopPaneFundo.getAllFrames()){
+            if(internal.getClass().toString().equalsIgnoreCase(frame.getClass().toString())){
+                return;
+            }
+        }
+                InternaCadUser internaCadUser = new InternaCadUser();
+        jDesktopPaneFundo.add(frame);
+        frame.setLocation(
+                jDesktopPaneFundo.getWidth() / 2 - frame.getWidth() / 2,
+                jDesktopPaneFundo.getHeight() / 2 - frame.getHeight() / 2);
+        frame.setVisible(true);
+    }
 }
+
+         
+
