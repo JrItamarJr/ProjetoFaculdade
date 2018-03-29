@@ -17,6 +17,7 @@ import javax.swing.Timer;
 import projeto.jdialog.configuser;
 import projeto.login.FormLogin;
 import projeto.telainterna.InternaCadUser;
+import projeto.telainterna.InternaSobreSistema;
 
 public class FormPrincipal extends javax.swing.JFrame {
 
@@ -51,6 +52,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         jLabelLogado = new javax.swing.JLabel();
         jSeparatorUserFinal = new javax.swing.JSeparator();
         jButtonUser = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
@@ -117,7 +119,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         jDesktopPaneFundoLayout.setVerticalGroup(
             jDesktopPaneFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPaneFundoLayout.createSequentialGroup()
-                .addComponent(jLabelimgFundo, javax.swing.GroupLayout.DEFAULT_SIZE, 637, Short.MAX_VALUE)
+                .addComponent(jLabelimgFundo, javax.swing.GroupLayout.DEFAULT_SIZE, 589, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -217,6 +219,17 @@ public class FormPrincipal extends javax.swing.JFrame {
                     .addComponent(jButtonUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
         );
 
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 44, Short.MAX_VALUE)
+        );
+
         jMenuBarFuncoes.setBackground(new java.awt.Color(204, 204, 204));
         jMenuBarFuncoes.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, java.awt.Color.lightGray));
         jMenuBarFuncoes.setForeground(new java.awt.Color(204, 204, 204));
@@ -246,6 +259,11 @@ public class FormPrincipal extends javax.swing.JFrame {
         jMenuItemSobre.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F12, 0));
         jMenuItemSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projeto/icones/help.png"))); // NOI18N
         jMenuItemSobre.setText("Sobre");
+        jMenuItemSobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemSobreActionPerformed(evt);
+            }
+        });
         jMenuArquivo.add(jMenuItemSobre);
         jMenuArquivo.add(jSeparator2);
 
@@ -438,10 +456,13 @@ public class FormPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jDesktopPaneFundo)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(jDesktopPaneFundo)
                 .addGap(0, 0, 0)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -518,12 +539,21 @@ public class FormPrincipal extends javax.swing.JFrame {
         configuser configuser = new configuser(this, false);
         configuser.setModal(true);
         configuser.setLocation(
-                jDesktopPaneFundo.getWidth() /850 - configuser.getWidth() / 850,
-                jDesktopPaneFundo.getHeight() +25 - configuser.getHeight() +25);
+                jDesktopPaneFundo.getWidth() / 850 - configuser.getWidth() / 850,
+                jDesktopPaneFundo.getHeight() + 25 - configuser.getHeight() + 25);
         configuser.setVisible(true);
 
 
     }//GEN-LAST:event_jButtonUserActionPerformed
+
+    private void jMenuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSobreActionPerformed
+        InternaSobreSistema internaSobreSistema = new InternaSobreSistema();
+        jDesktopPaneFundo.add(internaSobreSistema);
+        internaSobreSistema.setLocation(
+                jDesktopPaneFundo.getWidth() / 2 - internaSobreSistema.getWidth() / 2,
+                jDesktopPaneFundo.getHeight() / 2 - internaSobreSistema.getHeight() / 2);
+        internaSobreSistema.setVisible(true);
+    }//GEN-LAST:event_jMenuItemSobreActionPerformed
 
     public static void main(String args[]) {
 
@@ -603,6 +633,7 @@ public class FormPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuSepara8;
     private javax.swing.JMenu jMenuSepara9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;

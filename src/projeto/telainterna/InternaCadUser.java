@@ -122,7 +122,6 @@ public class InternaCadUser extends javax.swing.JInternalFrame {
         jButtonLimpTela = new javax.swing.JButton();
 
         setClosable(true);
-        setIconifiable(true);
         setTitle("Cadastro de Funcionarios");
 
         jPaneCadUser.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro"));
