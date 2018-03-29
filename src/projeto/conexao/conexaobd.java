@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class conexaobd {
 
@@ -23,9 +24,7 @@ public class conexaobd {
             return DriverManager.getConnection(URL, USER, PASS);
         } catch (ClassNotFoundException | SQLException ex) {
             throw new RuntimeException("Erro de Conexão!", ex);
-
         }
-
     }
 
     public void closeconnection(Connection con) {
@@ -34,6 +33,7 @@ public class conexaobd {
                 con.close();
             } catch (SQLException ex) {
                 Logger.getLogger(conexaobd.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, ex);
             }
         }
     }
@@ -44,6 +44,7 @@ public class conexaobd {
                 stmt.close();
             } catch (SQLException ex) {
                 Logger.getLogger(conexaobd.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, ex);
             }
         }
     }
@@ -54,8 +55,8 @@ public class conexaobd {
                 rs.close();
             } catch (SQLException ex) {
                 Logger.getLogger(conexaobd.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, ex);
             }
         }
     }
-
 }

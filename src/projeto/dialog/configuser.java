@@ -1,5 +1,5 @@
 
-package projeto.jdialog;
+package projeto.dialog;
 
 public class configuser extends javax.swing.JDialog {
 

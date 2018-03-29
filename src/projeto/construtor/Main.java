@@ -1,7 +1,7 @@
-package projeto.main;
+package projeto.construtor;
 
-import projeto.login.FormBackground;
-import projeto.login.FormLogin;
+import projeto.form.FormBackground;
+import projeto.form.FormLogin;
 
 public class Main {
 

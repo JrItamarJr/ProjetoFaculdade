@@ -1,10 +1,9 @@
-package projeto.tela;
+package projeto.form;
 
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.beans.PropertyVetoException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -15,23 +14,23 @@ import javax.swing.ImageIcon;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
-import projeto.jdialog.configuser;
-import projeto.login.FormLogin;
+import projeto.dialog.configuser;
 import projeto.telainterna.InternaCadUser;
 import projeto.telainterna.InternaSobreSistema;
 
 public class FormPrincipal extends javax.swing.JFrame {
+
     public FormPrincipal(String usuario) {
         initComponents();
-        jLabelLogado.setText(usuario); //  Puxa o usuario Logado  //
-        inicializa(); //  Carrega todos os itens que devem iniciar Junto ao programa  //
-
+        jLabelLogado.setText(usuario);
+        inicializa();
     }
 
     public FormPrincipal() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-
+    
+//=======#=#====GENERATE====#=#============//
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -219,8 +218,6 @@ public class FormPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabelTime, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
         );
-
-        jButton1.setLabel("");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -479,18 +476,11 @@ public class FormPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-        
+//=======#=#====GENERATE====#=#============//
 
+    
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-
-        //  Data  //
-        Date dataSistema = new Date();
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-        jLabelDate.setText(formato.format(dataSistema));
-
-        //  Hora  //
-        Timer timer = new Timer(1000, new hora());
-        timer.start();
+        DateTimer();
     }//GEN-LAST:event_formWindowOpened
 
     private void jMenuItemExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemExitActionPerformed
@@ -500,13 +490,10 @@ public class FormPrincipal extends javax.swing.JFrame {
         if (sair == JOptionPane.YES_OPTION) {
             System.exit(sair);
         }
-
-
     }//GEN-LAST:event_jMenuItemExitActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-
-
+//
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItemTrocaUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTrocaUserActionPerformed
@@ -522,12 +509,11 @@ public class FormPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemTrocaUserActionPerformed
 
     private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
-
+//
     }//GEN-LAST:event_jMenuItem18ActionPerformed
 
     private void jMenuEstacionamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuEstacionamentoActionPerformed
-
-
+//
     }//GEN-LAST:event_jMenuEstacionamentoActionPerformed
 
     private void jMenuItemCadColabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadColabActionPerformed
@@ -573,7 +559,6 @@ public class FormPrincipal extends javax.swing.JFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonUser;
@@ -643,25 +628,32 @@ public class FormPrincipal extends javax.swing.JFrame {
 //################################################   CODIGOS DE PROGRAMAÇÃO   ############################################################//
     public final void inicializa() {
         setExtendedState(MAXIMIZED_BOTH);
-        //this.setLocationRelativeTo(null);
         fundo();
-        setIcon();//  Iniciando a Classe do Ione Frame  //
-
+        setIcon();
     }
 
-    class hora implements ActionListener {
+    public void DateTimer() {
+        //  Data  //
+        Date dataSistema = new Date();
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        jLabelDate.setText(formato.format(dataSistema));
+        //  Hora  //
+        Timer timer = new Timer(1000, new hora());
+        timer.start();
+    }
+
+    public class hora implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
             Calendar now = Calendar.getInstance();
             jLabelTime.setText(String.format("%1$tH:%1$tM:%1$tS", now));
-
         }
     }
 
     public void fundo() {
         //  Pega o caminho da imagem  //
-        ImageIcon ImgFundo = new ImageIcon(getClass().getResource("/projeto/fundo/395153-popular-polygon-background-3000x2000.jpg"));
+        ImageIcon ImgFundo = new ImageIcon(getClass().getResource("/projeto/backgroud/395153-popular-polygon-background-3000x2000.jpg"));
         //  Define a imagem e o tamanho dela, nesse caso o tamanho da imagem é o tamnho do Form  //
         Image imgFundoPanel = ImgFundo.getImage();
         //  Define onde a imagem vai ficar, nesse caso no jLabelFundo  //
@@ -670,16 +662,16 @@ public class FormPrincipal extends javax.swing.JFrame {
 
     private void setIcon() {
         //  Caminho até a imagem (OBS: A imagem deve estar no pacote onde o framerecebera o Icone)  //
-        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/projeto/fundo/if_Company_132680.png")));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/projeto/backgroud/if_Company_132680.png")));
     }
-    
-    public void comandoDuplicado(JInternalFrame frame){
-        for(JInternalFrame internal: jDesktopPaneFundo.getAllFrames()){
-            if(internal.getClass().toString().equalsIgnoreCase(frame.getClass().toString())){
+
+    public void comandoDuplicado(JInternalFrame frame) {
+        for (JInternalFrame internal : jDesktopPaneFundo.getAllFrames()) {
+            if (internal.getClass().toString().equalsIgnoreCase(frame.getClass().toString())) {
                 return;
             }
         }
-                InternaCadUser internaCadUser = new InternaCadUser();
+        InternaCadUser internaCadUser = new InternaCadUser();
         jDesktopPaneFundo.add(frame);
         frame.setLocation(
                 jDesktopPaneFundo.getWidth() / 2 - frame.getWidth() / 2,
@@ -687,6 +679,3 @@ public class FormPrincipal extends javax.swing.JFrame {
         frame.setVisible(true);
     }
 }
-
-         
-

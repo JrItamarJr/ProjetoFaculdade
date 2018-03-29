@@ -1,8 +1,8 @@
 
-package projeto.bean;
+package projeto.bancodados;
 
 
-public class userb {
+public class UserBean {
     
     String nome;
     String user;

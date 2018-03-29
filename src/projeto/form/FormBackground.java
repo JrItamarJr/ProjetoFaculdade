@@ -1,9 +1,9 @@
-package projeto.login;
+package projeto.form;
 
 import java.awt.GridLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import projeto.main.MainBackground;
+import projeto.construtor.MainBackground;
 
 
 public class FormBackground extends javax.swing.JFrame {
