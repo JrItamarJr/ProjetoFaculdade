@@ -16,7 +16,7 @@ import projeto.classes.SalvarTXT;
  *
  * @author JhonattanSouza_
  */
-public class FormLogin extends javax.swing.JFrame {
+public final class FormLogin extends javax.swing.JFrame {
 
     public FormLogin() {
         initComponents();
@@ -119,8 +119,6 @@ public class FormLogin extends javax.swing.JFrame {
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
         loginConect();
         usuarios();
-        
-
     }//GEN-LAST:event_jButtonEntrarActionPerformed
 
     public void fecharFrame() {
