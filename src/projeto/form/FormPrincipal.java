@@ -41,7 +41,6 @@ public class FormPrincipal extends javax.swing.JFrame {
         jLabelimgFundo = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabelDataIcon = new javax.swing.JLabel();
-        jLabelTimeIcon = new javax.swing.JLabel();
         jSeparatorData = new javax.swing.JSeparator();
         jSeparatorDataFinal = new javax.swing.JSeparator();
         jSeparatorHora = new javax.swing.JSeparator();
@@ -129,13 +128,11 @@ public class FormPrincipal extends javax.swing.JFrame {
         jDesktopPaneFundo.setLayout(jDesktopPaneFundoLayout);
         jDesktopPaneFundoLayout.setHorizontalGroup(
             jDesktopPaneFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabelimgFundo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabelimgFundo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jDesktopPaneFundoLayout.setVerticalGroup(
             jDesktopPaneFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPaneFundoLayout.createSequentialGroup()
-                .addComponent(jLabelimgFundo, javax.swing.GroupLayout.DEFAULT_SIZE, 544, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+            .addComponent(jLabelimgFundo, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
         );
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
@@ -144,10 +141,6 @@ public class FormPrincipal extends javax.swing.JFrame {
         jLabelDataIcon.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabelDataIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projeto/icones/if_Calendar_132582.png"))); // NOI18N
         jLabelDataIcon.setText("Data");
-
-        jLabelTimeIcon.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabelTimeIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projeto/icones/if_Compass_132701.png"))); // NOI18N
-        jLabelTimeIcon.setText("Hora");
 
         jSeparatorData.setForeground(new java.awt.Color(0, 0, 0));
         jSeparatorData.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -197,7 +190,7 @@ public class FormPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabelLogado, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparatorUserFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 495, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 503, Short.MAX_VALUE)
                 .addComponent(jSeparatorData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelDataIcon)
@@ -207,9 +200,7 @@ public class FormPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabelDate, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparatorHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelTimeIcon)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(53, 53, 53)
                 .addComponent(jSeparatorHoraFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelTime, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -219,9 +210,7 @@ public class FormPrincipal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabelDataIcon)
-                        .addComponent(jLabelTimeIcon))
+                    .addComponent(jLabelDataIcon, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jSeparatorUser, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabelLogado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jSeparatorUserFinal, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -238,7 +227,25 @@ public class FormPrincipal extends javax.swing.JFrame {
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projeto/icones/hotel-icon (1).png"))); // NOI18N
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projeto/icones/Male-icon (6).png"))); // NOI18N
+
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projeto/icones/Actions-user-group-properties-icon (6).png"))); // NOI18N
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projeto/icones/Groups-Meeting-Dark-icon.png"))); // NOI18N
+
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projeto/icones/Logos-Google-Groups-icon (5).png"))); // NOI18N
+
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projeto/icones/Male-user-info-icon (1).png"))); // NOI18N
+
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projeto/icones/Male-user-remove-icon (5).png"))); // NOI18N
+
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projeto/icones/Male-user-search-icon (5).png"))); // NOI18N
+
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projeto/icones/Messaging-Message-Group-icon (1).png"))); // NOI18N
+
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projeto/icones/Rest-Person-Coffee-Break-Female-Dark-icon (2).png"))); // NOI18N
 
         jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
@@ -545,13 +552,14 @@ public class FormPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPaneFundo)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jDesktopPaneFundo)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, 0)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jDesktopPaneFundo)
@@ -662,7 +670,6 @@ public class FormPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelDate;
     private javax.swing.JLabel jLabelLogado;
     private javax.swing.JLabel jLabelTime;
-    private javax.swing.JLabel jLabelTimeIcon;
     private javax.swing.JLabel jLabelimgFundo;
     private javax.swing.JMenu jMenCafe;
     public static final javax.swing.JMenu jMenuArquivo = new javax.swing.JMenu();
@@ -756,6 +763,8 @@ public class FormPrincipal extends javax.swing.JFrame {
         //  Define onde a imagem vai ficar, nesse caso no jLabelFundo  //
         jLabelimgFundo.setIcon(new ImageIcon(imgFundoPanel));
     }
+
+    
 
     private void setIcon() {
         //  Caminho até a imagem (OBS: A imagem deve estar no pacote onde o framerecebera o Icone)  //
