@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 import projeto.dialog.configuser;
 import projeto.telainterna.InternaCadUser;
 import projeto.telainterna.InternaSobreSistema;
@@ -30,7 +31,7 @@ public class FormPrincipal extends javax.swing.JFrame {
     public FormPrincipal() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-    
+
 //=======#=#====GENERATE====#=#============//
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -227,6 +228,11 @@ public class FormPrincipal extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projeto/icones/hotel-icon (1).png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projeto/icones/Male-icon (6).png"))); // NOI18N
 
@@ -572,7 +578,7 @@ public class FormPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 //=======#=#====GENERATE====#=#============//
 
-    
+
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         DateTimer();
     }//GEN-LAST:event_formWindowOpened
@@ -626,6 +632,10 @@ public class FormPrincipal extends javax.swing.JFrame {
     private void jMenuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSobreActionPerformed
         comandoDuplicado(new InternaSobreSistema());
     }//GEN-LAST:event_jMenuItemSobreActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
 
@@ -759,14 +769,12 @@ public class FormPrincipal extends javax.swing.JFrame {
 
     public void fundo() {
         //  Pega o caminho da imagem  //
-        ImageIcon ImgFundo = new ImageIcon(getClass().getResource("/projeto/backgroud/395153-popular-polygon-background-3000x2000.jpg"));
         //  Define a imagem e o tamanho dela, nesse caso o tamanho da imagem é o tamnho do Form  //
-        Image imgFundoPanel = ImgFundo.getImage();
         //  Define onde a imagem vai ficar, nesse caso no jLabelFundo  //
+        ImageIcon ImgFundo = new ImageIcon(getClass().getResource("/projeto/backgroud/395153-popular-polygon-background-3000x2000.jpg"));
+        Image imgFundoPanel = ImgFundo.getImage();
         jLabelimgFundo.setIcon(new ImageIcon(imgFundoPanel));
     }
-
-    
 
     private void setIcon() {
         //  Caminho até a imagem (OBS: A imagem deve estar no pacote onde o framerecebera o Icone)  //
@@ -779,6 +787,7 @@ public class FormPrincipal extends javax.swing.JFrame {
                 return;
             }
         }
+        InternaCadUser internaCadUser = new InternaCadUser();
         jDesktopPaneFundo.add(frame);
         frame.setLocation(
                 jDesktopPaneFundo.getWidth() / 2 - frame.getWidth() / 2,

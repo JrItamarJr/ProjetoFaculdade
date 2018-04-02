@@ -6,6 +6,8 @@ import java.awt.event.KeyListener;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
@@ -25,15 +27,6 @@ public final class FormLogin extends javax.swing.JFrame {
 //        jPasswordPass.requestFocus(); // Deixa o "jPasswordField" em foco //
     }
 
-    private void exibirErro(javax.swing.JLabel label, String mensagem) {
-        label.setVisible(true);
-        label.setText(mensagem);
-    }
-
-    private boolean verificarCampo(String campo) {
-        return campo != null && campo.trim().length() > 0;
-    }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -42,8 +35,8 @@ public final class FormLogin extends javax.swing.JFrame {
         jTextUser = new javax.swing.JTextField();
         jCheckLembrar = new javax.swing.JCheckBox();
         jPanel1 = new javax.swing.JPanel();
-        jLB_Minimizar = new javax.swing.JLabel();
-        jLB_Fechar = new javax.swing.JLabel();
+        jLabelMinimizar = new javax.swing.JLabel();
+        jLabelFechar = new javax.swing.JLabel();
         jLB_Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,6 +45,7 @@ public final class FormLogin extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jButtonEntrar.setToolTipText("Entrar no Sistema");
         jButtonEntrar.setBorder(null);
         jButtonEntrar.setBorderPainted(false);
         jButtonEntrar.setContentAreaFilled(false);
@@ -65,38 +59,43 @@ public final class FormLogin extends javax.swing.JFrame {
         getContentPane().add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 273, 334, 35));
 
         jPasswordPass.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jPasswordPass.setToolTipText("Senha");
         jPasswordPass.setBorder(null);
         jPasswordPass.setOpaque(false);
         getContentPane().add(jPasswordPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 250, 30));
 
         jTextUser.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextUser.setToolTipText("Usuário");
         jTextUser.setBorder(null);
         jTextUser.setOpaque(false);
         getContentPane().add(jTextUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 148, 250, 30));
 
         jCheckLembrar.setSelected(true);
         jCheckLembrar.setText("Lembrar usuario.");
+        jCheckLembrar.setToolTipText("Lembrar ultimo usuario Logado.");
         jCheckLembrar.setContentAreaFilled(false);
         getContentPane().add(jCheckLembrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 235, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 100, 150, 40));
 
-        jLB_Minimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLB_Minimizar.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabelMinimizar.setToolTipText("Minimizar");
+        jLabelMinimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jLB_MinimizarMouseReleased(evt);
+                jLabelMinimizarMouseReleased(evt);
             }
         });
-        getContentPane().add(jLB_Minimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 10, 30, 20));
+        getContentPane().add(jLabelMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 10, 30, 20));
 
-        jLB_Fechar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLB_Fechar.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabelFechar.setToolTipText("Fechar");
+        jLabelFechar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelFechar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jLB_FecharMouseReleased(evt);
+                jLabelFecharMouseReleased(evt);
             }
         });
-        getContentPane().add(jLB_Fechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 0, 30, 40));
+        getContentPane().add(jLabelFechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 0, 30, 40));
 
         jLB_Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projeto/backgroud/login-background2.png"))); // NOI18N
         getContentPane().add(jLB_Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 400));
@@ -105,24 +104,20 @@ public final class FormLogin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLB_FecharMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLB_FecharMouseReleased
+    private void jLabelFecharMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelFecharMouseReleased
         int sair = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja sair ?", "Atençao", JOptionPane.YES_NO_OPTION, 2);
         if (sair == JOptionPane.YES_OPTION) {
             System.exit(0);
         }
-    }//GEN-LAST:event_jLB_FecharMouseReleased
+    }//GEN-LAST:event_jLabelFecharMouseReleased
 
-    private void jLB_MinimizarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLB_MinimizarMouseReleased
+    private void jLabelMinimizarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMinimizarMouseReleased
         setExtendedState(ICONIFIED);
-    }//GEN-LAST:event_jLB_MinimizarMouseReleased
+    }//GEN-LAST:event_jLabelMinimizarMouseReleased
 
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
         loginConect();
     }//GEN-LAST:event_jButtonEntrarActionPerformed
-
-    public void fecharFrame() {
-
-    }
 
     /**
      *
@@ -160,8 +155,8 @@ public final class FormLogin extends javax.swing.JFrame {
     public static final javax.swing.JButton jButtonEntrar = new javax.swing.JButton();
     private javax.swing.JCheckBox jCheckLembrar;
     private javax.swing.JLabel jLB_Background;
-    private javax.swing.JLabel jLB_Fechar;
-    private javax.swing.JLabel jLB_Minimizar;
+    private javax.swing.JLabel jLabelFechar;
+    private javax.swing.JLabel jLabelMinimizar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordPass;
     private javax.swing.JTextField jTextUser;
@@ -212,7 +207,7 @@ public final class FormLogin extends javax.swing.JFrame {
         });
     }
 
-//    public void usuarios() {
+    public void usuarios() {
 //
 //        //Aqui fica a conexao com os usuario definida por meio de um parametro simples -
 //        //Tambem ficara a conexao com o banco de dados na parte de verificar FormLogin - 
@@ -236,11 +231,13 @@ public final class FormLogin extends javax.swing.JFrame {
 //            jPasswordPass.setText("");
 //            jTextUser.requestFocus();
 //        }
-//    }
+    }
+
     public void loginConect() {
         UserDao userd = new UserDao();
 
         if (userd.CheckLogin(jTextUser.getText(), jPasswordPass.getText())) {
+            // Se a checkBox estiver marcada irá salvar o nome do Usuario
             if (jCheckLembrar.isSelected()) {
                 SalvarTXT salva = new SalvarTXT();
                 salva.setUser(jTextUser.getText());
@@ -250,10 +247,17 @@ public final class FormLogin extends javax.swing.JFrame {
                 salva.setUser("");
                 salva.Salvar();
             }
-            // Chama a tela Principal  
-            FormPrincipal tela1 = new FormPrincipal(jTextUser.getText() + "   -   ADMINISTRADOR");
-            tela1.setVisible(true);
-            this.dispose();
+            try {
+                FormBackground formBackground = new FormBackground();
+                Thread.sleep(1000);
+                FormPrincipal tela1 = new FormPrincipal(jTextUser.getText() + "   -   ADMINISTRADOR");
+                tela1.setVisible(true);
+                this.dispose();
+
+            } catch (InterruptedException ex) {
+                Logger.getLogger(FormLogin.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
         } else {
             JOptionPane.showMessageDialog(null, "Usuario ou senha Incorretos!");
             jPasswordPass.setText("");
