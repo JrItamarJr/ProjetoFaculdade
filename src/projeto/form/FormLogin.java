@@ -62,7 +62,7 @@ public final class FormLogin extends javax.swing.JFrame {
                 jButtonEntrarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 340, 40));
+        getContentPane().add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 273, 334, 35));
 
         jPasswordPass.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPasswordPass.setBorder(null);
@@ -77,7 +77,7 @@ public final class FormLogin extends javax.swing.JFrame {
         jCheckLembrar.setSelected(true);
         jCheckLembrar.setText("Lembrar usuario.");
         jCheckLembrar.setContentAreaFilled(false);
-        getContentPane().add(jCheckLembrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, -1, -1));
+        getContentPane().add(jCheckLembrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 235, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 100, 150, 40));
@@ -118,7 +118,6 @@ public final class FormLogin extends javax.swing.JFrame {
 
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
         loginConect();
-        usuarios();
     }//GEN-LAST:event_jButtonEntrarActionPerformed
 
     public void fecharFrame() {
@@ -170,10 +169,7 @@ public final class FormLogin extends javax.swing.JFrame {
 //################################################   CODIGOS DE PROGRAMAÇÃO   ############################################################//
 
     public void inicializacao() {
-//        fundo(); // Inicia o contrutor da Imagem de fundo
         maiuscula(); // Inia o contrutor que deixa as letras sempres maiuscular no "jTextUser"
-//        getRootPane().setDefaultButton(jButtonEntrar); // Deixa o "jButtonEntrar" em foco
-//        jPasswordPass.requestFocus(); // Deixa o "jTextUser" em foco
         lerTxt(); // Ler o txt salvo com o Ultimo usuario logado
         setIcon(); // Inicia o Icone do Programa
     }
@@ -216,7 +212,7 @@ public final class FormLogin extends javax.swing.JFrame {
         });
     }
 
-    public void usuarios() {
+//    public void usuarios() {
 //
 //        //Aqui fica a conexao com os usuario definida por meio de um parametro simples -
 //        //Tambem ficara a conexao com o banco de dados na parte de verificar FormLogin - 
@@ -225,45 +221,22 @@ public final class FormLogin extends javax.swing.JFrame {
 //                SalvarTXT salva = new SalvarTXT();
 //                salva.setUser(jTextUser.getText());
 //                salva.Salvar();
-//
 //            } else {
 //                SalvarTXT salva = new SalvarTXT();
 //                salva.setUser("");
 //                salva.Salvar();
-//
 //            }
 //            // Chama a tela Principal  
 //            FormPrincipal tela1 = new FormPrincipal(jTextUser.getText() + "   -   ADMINISTRADOR");
 //            tela1.setVisible(true);
 //            this.dispose();
-//
-//        } else if (jTextUser.getText().equalsIgnoreCase("winicius") && jPasswordPass.getText().equals("123")) {
-//            if (jCheckLembrar.isSelected()) {
-//                SalvarTXT salva = new SalvarTXT();
-//                salva.setUser(jTextUser.getText());
-//                salva.Salvar();
-//
-//            } else {
-//                SalvarTXT salva = new SalvarTXT();
-//                salva.setUser("");
-//                salva.Salvar();
-//
-//            }
-//            // Chama a tela Principal          
-//            FormPrincipal tela1 = new FormPrincipal(jTextUser.getText() + "   -   ADMINISTRADOR");
-//            FormPrincipal.jMenuArquivo.setVisible(false);
-//            FormPrincipal.jMenuSepara.setVisible(false);
-//            tela1.setVisible(true);
-//            this.dispose();
-//
 //        } else {
 //            JOptionPane.showMessageDialog(null, "Usuario ou senha Incorretos!");
 //            jTextUser.setText("");
 //            jPasswordPass.setText("");
 //            jTextUser.requestFocus();
 //        }
-    }
-
+//    }
     public void loginConect() {
         UserDao userd = new UserDao();
 
@@ -272,7 +245,6 @@ public final class FormLogin extends javax.swing.JFrame {
                 SalvarTXT salva = new SalvarTXT();
                 salva.setUser(jTextUser.getText());
                 salva.Salvar();
-
             } else {
                 SalvarTXT salva = new SalvarTXT();
                 salva.setUser("");
@@ -295,11 +267,8 @@ public final class FormLogin extends javax.swing.JFrame {
             byte[] texto = Files.readAllBytes(caminho);
             String leitura = new String(texto);
             jTextUser.setText(leitura);
-
         } catch (Exception erro) {
-
         }
-
     }
 
     private void setIcon() {
