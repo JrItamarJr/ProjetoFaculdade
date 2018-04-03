@@ -1,5 +1,5 @@
 
-package projeto.bancodados;
+package projeto.infobanco;
 
 
 public class UserBean {

@@ -9,6 +9,6 @@ package projeto.classes;
  *
  * @author itamar
  */
-public class LimpaCampos {
+public class ClassLimpaCampos {
     
 }

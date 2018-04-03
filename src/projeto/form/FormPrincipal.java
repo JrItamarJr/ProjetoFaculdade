@@ -15,8 +15,8 @@ import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
-import projeto.dialog.configuser;
-import projeto.telainterna.InternaCadUser;
+import projeto.dialog.DialogConfigurarUsuario;
+import projeto.telainterna.InternaCadastrosUsuarios;
 import projeto.telainterna.InternaSobreSistema;
 
 public class FormPrincipal extends javax.swing.JFrame {
@@ -623,11 +623,11 @@ public class FormPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuEstacionamentoActionPerformed
 
     private void jMenuItemCadColabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadColabActionPerformed
-        comandoDuplicado(new InternaCadUser());
+        comandoDuplicado(new InternaCadastrosUsuarios());
     }//GEN-LAST:event_jMenuItemCadColabActionPerformed
 
     private void jButtonUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUserActionPerformed
-        configuser configuser = new configuser(this, false);
+        DialogConfigurarUsuario configuser = new DialogConfigurarUsuario(this, false);
         configuser.setModal(true);
         configuser.setLocation(
                 jDesktopPaneFundo.getWidth() / 850 - configuser.getWidth() / 850,
@@ -793,7 +793,7 @@ public class FormPrincipal extends javax.swing.JFrame {
                 return;
             }
         }
-        InternaCadUser internaCadUser = new InternaCadUser();
+        InternaCadastrosUsuarios internaCadUser = new InternaCadastrosUsuarios();
         jDesktopPaneFundo.add(frame);
         frame.setLocation(
                 jDesktopPaneFundo.getWidth() / 2 - frame.getWidth() / 2,

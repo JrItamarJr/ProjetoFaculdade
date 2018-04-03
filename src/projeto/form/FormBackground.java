@@ -1,10 +1,8 @@
 package projeto.form;
 
 import java.awt.GridLayout;
-import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.plaf.basic.BasicInternalFrameUI;
 import projeto.construtor.MainBackground;
 
 public final class FormBackground extends javax.swing.JFrame {

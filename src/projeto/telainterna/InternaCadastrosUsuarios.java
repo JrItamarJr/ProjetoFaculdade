@@ -3,12 +3,12 @@ package projeto.telainterna;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class InternaCadUser extends javax.swing.JInternalFrame {
+public class InternaCadastrosUsuarios extends javax.swing.JInternalFrame {
 
     private static int sequence = 1;
     private int id;
 
-    public InternaCadUser() {
+    public InternaCadastrosUsuarios() {
         initComponents();
 
     }
@@ -1042,7 +1042,7 @@ public class InternaCadUser extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanelFiltros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanelOpcoes, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jPanelOpcoes, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 

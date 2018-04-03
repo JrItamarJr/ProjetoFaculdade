@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 
-public class SalvarTXT {
+public class ClassSalvarTXT {
     
     
      private String user;

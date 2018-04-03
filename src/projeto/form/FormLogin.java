@@ -11,8 +11,8 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
-import projeto.bancodados.UserDao;
-import projeto.classes.SalvarTXT;
+import projeto.infobanco.UserDao;
+import projeto.classes.ClassSalvarTXT;
 
 /**
  *
@@ -164,20 +164,11 @@ public final class FormLogin extends javax.swing.JFrame {
 //################################################   CODIGOS DE PROGRAMAÇÃO   ############################################################//
 
     public void inicializacao() {
-        maiuscula(); // Inia o contrutor que deixa as letras sempres maiuscular no "jTextUser"
-        lerTxt(); // Ler o txt salvo com o Ultimo usuario logado
-        setIcon(); // Inicia o Icone do Programa
+        maiuscula();  // Inia o contrutor que deixa as letras sempres maiuscular no "jTextUser"
+        lerTxt();    // Ler o txt salvo com o Ultimo usuario logado
+        setIcon();  // Inicia o Icone do Programa
     }
 
-    // seta a imagem de fundo por meio de um parametro
-//    public void fundo() {
-//        // Pega o caminho da imagem
-//        ImageIcon ImgFundo = new ImageIcon(getClass().getResource("/projeto/fundo/19585a37f6b458b.jpg"));
-//        //Define a imagem e o tamanho dela, nesse caso o tamanho da imagem é o tamnho do Form
-//        Image imgFundoPanel = ImgFundo.getImage().getScaledInstance(836, 398, Image.SCALE_DEFAULT);
-//        //Define onde a imagem vai ficar, nesse caso no jLabelFundo
-//        jLabelFundo.setIcon(new ImageIcon(imgFundoPanel));
-//    }
     // este comando pega tudo o que estiver na variavel selecionada que no cao é a jTextUser e deixa maiusculo
     public void maiuscula() {
         jTextUser.addKeyListener(new KeyListener() {
@@ -213,11 +204,11 @@ public final class FormLogin extends javax.swing.JFrame {
 //        //Tambem ficara a conexao com o banco de dados na parte de verificar FormLogin - 
 //        if (jTextUser.getText().equalsIgnoreCase("itamar") && jPasswordPass.getText().equals("123")) {
 //            if (jCheckLembrar.isSelected()) {
-//                SalvarTXT salva = new SalvarTXT();
+//                ClassSalvarTXT salva = new ClassSalvarTXT();
 //                salva.setUser(jTextUser.getText());
 //                salva.Salvar();
 //            } else {
-//                SalvarTXT salva = new SalvarTXT();
+//                ClassSalvarTXT salva = new ClassSalvarTXT();
 //                salva.setUser("");
 //                salva.Salvar();
 //            }
@@ -239,11 +230,11 @@ public final class FormLogin extends javax.swing.JFrame {
         if (userd.CheckLogin(jTextUser.getText(), jPasswordPass.getText())) {
             // Se a checkBox estiver marcada irá salvar o nome do Usuario
             if (jCheckLembrar.isSelected()) {
-                SalvarTXT salva = new SalvarTXT();
+                ClassSalvarTXT salva = new ClassSalvarTXT();
                 salva.setUser(jTextUser.getText());
                 salva.Salvar();
             } else {
-                SalvarTXT salva = new SalvarTXT();
+                ClassSalvarTXT salva = new ClassSalvarTXT();
                 salva.setUser("");
                 salva.Salvar();
             }

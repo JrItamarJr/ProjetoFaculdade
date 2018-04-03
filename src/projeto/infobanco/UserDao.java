@@ -1,4 +1,4 @@
-package projeto.bancodados;
+package projeto.infobanco;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,12 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import projeto.conexao.conexaobd;
+import projeto.conexao.ConexaoBD;
 
 public class UserDao {
 
     public boolean CheckLogin(String user, String senha) {
-        Connection con = conexaobd.getconnection();
+        Connection con = ConexaoBD.getconnection();
 
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -32,7 +32,7 @@ public class UserDao {
         } catch (SQLException ex) {
             Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            conexaobd.getconnection();
+            ConexaoBD.getconnection();
         }
         return check;
 
