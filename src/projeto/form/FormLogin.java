@@ -257,7 +257,7 @@ public final class FormLogin extends javax.swing.JFrame {
     }
 
     public void lerTxt() {
-        Path caminho = Paths.get("login.txt");
+        Path caminho = Paths.get("build\\classes\\projeto\\login\\user\\ultimouser\\login.txt");
         try {
             byte[] texto = Files.readAllBytes(caminho);
             String leitura = new String(texto);
