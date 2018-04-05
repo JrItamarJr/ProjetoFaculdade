@@ -8,8 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 //        FormBackground formBg = new FormBackground();
-
-FormLogin formLogin = new FormLogin();
+        FormLogin formLogin = new FormLogin();
         //Forçando o tema Windows para todas as telas, para que o tema NIMBUS não volte a aparecer.
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

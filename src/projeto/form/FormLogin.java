@@ -24,7 +24,7 @@ public final class FormLogin extends javax.swing.JFrame {
         initComponents();
         this.getRootPane().setDefaultButton(jButtonEntrar);
         inicializacao();
-        FocusJtext();
+//        jPasswordPass.requestFocus(); // Deixa o "jPasswordField" em foco //
     }
 
     @SuppressWarnings("unchecked")
@@ -40,7 +40,6 @@ public final class FormLogin extends javax.swing.JFrame {
         jLB_Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Login");
         setMinimumSize(new java.awt.Dimension(750, 400));
         setUndecorated(true);
         setResizable(false);
@@ -239,15 +238,16 @@ public final class FormLogin extends javax.swing.JFrame {
                 salva.setUser("");
                 salva.Salvar();
             }
-//            try {
-//                Thread.sleep(10000);
+            try {
+                FormBackground formBackground = new FormBackground();
+                Thread.sleep(1000);
                 FormPrincipal tela1 = new FormPrincipal(jTextUser.getText() + "   -   ADMINISTRADOR");
                 tela1.setVisible(true);
                 this.dispose();
 
-//            } catch (InterruptedException ex) {
-//                Logger.getLogger(FormLogin.class.getName()).log(Level.SEVERE, null, ex);
-//            }
+            } catch (InterruptedException ex) {
+                Logger.getLogger(FormLogin.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
         } else {
             JOptionPane.showMessageDialog(null, "Usuario ou senha Incorretos!");
@@ -257,7 +257,7 @@ public final class FormLogin extends javax.swing.JFrame {
     }
 
     public void lerTxt() {
-        Path caminho = Paths.get("login.txt");
+        Path caminho = Paths.get("build\\classes\\projeto\\login\\user\\ultimouser\\login.txt");
         try {
             byte[] texto = Files.readAllBytes(caminho);
             String leitura = new String(texto);
@@ -269,14 +269,5 @@ public final class FormLogin extends javax.swing.JFrame {
     private void setIcon() {
         //  Caminho até a imagem (OBS: A imagem deve estar no pacote onde o framerecebera o Icone)
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/projeto/backgroud/if_Company_132680.png")));
-    }
-
-    private void FocusJtext() {
-        if (jTextUser.getText().trim().equals("")) {
-            jTextUser.requestFocus();
-        } else {
-            jPasswordPass.requestFocus();
-        }
-
     }
 }

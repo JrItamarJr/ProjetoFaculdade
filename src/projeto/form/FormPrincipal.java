@@ -16,7 +16,6 @@ import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import projeto.dialog.DialogConfigurarUsuario;
-import projeto.telainterna.InternaCadastrosPedidos;
 import projeto.telainterna.InternaCadastrosUsuarios;
 import projeto.telainterna.InternaSobreSistema;
 
@@ -95,7 +94,6 @@ public class FormPrincipal extends javax.swing.JFrame {
         jMenuControladoria = new javax.swing.JMenu();
         jMenuItem16 = new javax.swing.JMenuItem();
         jMenuItem17 = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem18 = new javax.swing.JMenuItem();
         jMenuItem19 = new javax.swing.JMenuItem();
         jMenuItem20 = new javax.swing.JMenuItem();
@@ -472,15 +470,6 @@ public class FormPrincipal extends javax.swing.JFrame {
         jMenuItem17.setText("Controle de Setores");
         jMenuControladoria.add(jMenuItem17);
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F6, 0));
-        jMenuItem1.setText("Pedidos de Compras");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenuControladoria.add(jMenuItem1);
-
         jMenuItem18.setText("Controle de Estoque");
         jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -642,7 +631,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         configuser.setModal(true);
         configuser.setLocation(
                 jDesktopPaneFundo.getWidth() / 850 - configuser.getWidth() / 850,
-                jDesktopPaneFundo.getHeight() + 30 - configuser.getHeight() + 30);
+                jDesktopPaneFundo.getHeight() + 25 - configuser.getHeight() + 25);
         configuser.setVisible(true);
     }//GEN-LAST:event_jButtonUserActionPerformed
 
@@ -653,10 +642,6 @@ public class FormPrincipal extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        comandoDuplicado(new InternaCadastrosPedidos());
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     public static void main(String args[]) {
 
@@ -713,7 +698,6 @@ public class FormPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuEstacionamento;
     private javax.swing.JMenu jMenuFinanceiro;
     private javax.swing.JMenu jMenuHospedes;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
