@@ -58,16 +58,26 @@ public class InternaSobreSistema extends javax.swing.JInternalFrame {
         setMinimumSize(new java.awt.Dimension(930, 607));
         setPreferredSize(new java.awt.Dimension(930, 607));
 
+        jScrollPane2.setBorder(javax.swing.BorderFactory.createTitledBorder("Documentos"));
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
         jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(240, 240, 240));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createTitledBorder("Documentos"));
+        jTextArea1.setText("550*629");
+        jTextArea1.setBorder(null);
         jScrollPane2.setViewportView(jTextArea1);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Menus"));
 
         jButton1.setText("Menu Sobre");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Menu Sobre");
 
@@ -133,7 +143,6 @@ public class InternaSobreSistema extends javax.swing.JInternalFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
@@ -168,7 +177,8 @@ public class InternaSobreSistema extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton18)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton17))
+                .addComponent(jButton17)
+                .addGap(0, 11, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -187,8 +197,8 @@ public class InternaSobreSistema extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2))
                 .addContainerGap())
         );
 
@@ -205,6 +215,25 @@ public class InternaSobreSistema extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        jTextArea1.setText("Inicio ---------------------------------- Meio ---------------------------------- FIM"+
+                         "\n                                          TESTE                                      "+
+                         "\n    Aqui estamos fazendo um teste Aqui estamos fazendo um teste Aqui estamos  fazendo"+
+                         "\n um teste Aqui estamos fazendo um teste Aqui estamos fazendo  um teste  Aqui  estamos"
+                + ""+
+                         "\n4444444444444444444444444444444444444444444444444444444444444444444444444444444444444\n"+
+                "TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"
+                +" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"
+                +" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"
+                +" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"
+                +" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"+" TESTE \n"
+                            +"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n"
+                            +"123456789¹123456789²123456789³123456789¹123456789²123456789¹123456789²123456789³12345678\n"
+                +" Este campo de Texo aceita até 78Char sem que ele apareça um Barra de Rolagem\n"
+                + "Estou vendo metodos para que não deixe que vá para o lado,só para baixo!"
+        );
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

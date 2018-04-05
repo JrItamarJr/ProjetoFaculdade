@@ -23,7 +23,7 @@ public class ClassSalvarTXT {
     public String Salvar(){
         
          try {
-             FileWriter fw = new FileWriter("build\\classes\\projeto\\login\\user\\ultimouser\\login.txt");
+             FileWriter fw = new FileWriter("login.txt");
              PrintWriter pw = new PrintWriter(fw);
              pw.print(this.user);
              pw.flush();
