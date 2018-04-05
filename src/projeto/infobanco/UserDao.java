@@ -6,12 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import projeto.conexao.ConexaoBD;
+import projeto.conexao.ConexaoBancoDados;
 
 public class UserDao {
 
     public boolean CheckLogin(String user, String senha) {
-        Connection con = ConexaoBD.getconnection();
+        Connection con = ConexaoBancoDados.getconnection();
 
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -32,7 +32,7 @@ public class UserDao {
         } catch (SQLException ex) {
             Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            ConexaoBD.getconnection();
+            ConexaoBancoDados.getconnection();
         }
         return check;
 

@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-public class ConexaoBD {
+public class ConexaoBancoDados {
 
     private static final String DRIVER = "com.mysql.jdbc.Driver";   //  Drive de conexão  //
     private static final String URL = "jdbc:mysql://localhost:3306/projetohotel";  //  Caminho do banco de dados // 
@@ -32,7 +32,7 @@ public class ConexaoBD {
             try {
                 con.close();
             } catch (SQLException ex) {
-                Logger.getLogger(ConexaoBD.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ConexaoBancoDados.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null, ex);
             }
         }
@@ -43,7 +43,7 @@ public class ConexaoBD {
             try {
                 stmt.close();
             } catch (SQLException ex) {
-                Logger.getLogger(ConexaoBD.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ConexaoBancoDados.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null, ex);
             }
         }
@@ -54,7 +54,7 @@ public class ConexaoBD {
             try {
                 rs.close();
             } catch (SQLException ex) {
-                Logger.getLogger(ConexaoBD.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ConexaoBancoDados.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null, ex);
             }
         }
